@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button role="button" aria-pressed="false" id="toggleButton">Follow</button>
+  
+</body>
+</html>
+
+
+<script>
+  const button = document.getElementById('toggleButton');
+
+  button.addEventListener('click', function() {
+    // Toggle aria-pressed state
+    const isPressed = this.getAttribute('aria-pressed') === 'true';
+    this.setAttribute('aria-pressed', !isPressed);
+
+    // Update button text based on state
+    this.textContent = isPressed ? 'Follow' : 'Unfollow';
+  });
+</script>
